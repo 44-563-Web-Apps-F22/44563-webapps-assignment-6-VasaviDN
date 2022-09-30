@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <title>Basic Java Script Exercise</title>
+ </head>
+<body>
+<h1>Musician guess by Devineni Vasavi</h1>
+<h2>Getting input</h2>
+
+<form>
+    <label for="secret_musician">Enter the secret musician name: </label>
+    <input type ="password" id="secret_musician" name="secret_musician" value="John Lennon"> <br>
+
+    <label for="guess_musician">Guess the musician: </label>
+    <input type ="text" id="guess_musician" name="guess_musician"> <br>
+
+    <input type="button" onclick="checkGuess()" value="Check the guess">
+</form>
+
+
+<p id="result">Count of wrong and right guesses will be shown here</p>
+
+<script> 
+let correct = 0
+let wrong = 0
+function checkGuess (){
+    musician1 = document.getElementById("secret_musician").value
+    musician2 = document.getElementById("guess_musician").value
+
+    out = document.getElementById("result")
+    if(musician1==musician2){
+        correct++
+        confirm("You got it right")
+    } else {
+        wrong++
+        confirm("Wrong Musician")
+    }
+    out.innerHTML="Count of correct guess:"+correct+" and wrong guess:"+wrong
+}
+</script>
+</body>
+</html> 
