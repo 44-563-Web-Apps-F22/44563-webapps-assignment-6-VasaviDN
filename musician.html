@@ -17,12 +17,16 @@
     <input type="button" onclick="checkGuess()" value="Check the guess">
 </form>
 
-
 <p id="result">Count of wrong and right guesses will be shown here</p>
+
+<div class="container">
+    <img src="dragonfly.jpg" alt="dragonfly" width="100px" height="100px" onclick="swapImage()" id="image">
+</div>
 
 <script> 
 let correct = 0
 let wrong = 0
+let useImage = 1
 function checkGuess (){
     musician1 = document.getElementById("secret_musician").value
     musician2 = document.getElementById("guess_musician").value
@@ -36,6 +40,22 @@ function checkGuess (){
         confirm("Wrong Musician")
     }
     out.innerHTML="Count of correct guess:"+correct+" and wrong guess:"+wrong
+}
+
+function swapImage(){
+    switch(useImage){
+        case 1 :    document.getElementById("image").src = "Elephant hawk moth.jpg"
+                    useImage = 2
+                    break
+        case 2 :    document.getElementById("image").src = "velvet mite.jpg"
+                    useImage = 3
+                    break
+        case 3 :    document.getElementById("image").src = "dragonfly.jpg"
+                    useImage = 1
+                    break
+        default:    break
+    }
+
 }
 </script>
 </body>
