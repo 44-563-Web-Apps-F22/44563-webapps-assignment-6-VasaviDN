@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Discount Page</title>
+     </head>
+ 
+<body>
+
+<h2>Vasavi Devineni computes discounts</h2>
+
+<form>
+    <label for="amount">Enter base amount </label>
+    <input type ="number" id="amount" name="amount" value=20> <br>
+
+    <label for="discnt">Enter the discount percentage </label>
+    <input type ="number" id="discnt" name="discnt" value=10> <br>
+
+    <input type="button" onclick="discount()" value="Apply discount">
+</form>
+
+
+<p id="result">This text will be replaced </p>
+
+<script> 
+function discount(){
+    let result = ""
+    let amount = document.getElementById("amount").value
+    let discount = document.getElementById("discnt").value
+    let finalDiscount = (discount / 100) * amount
+    finalDiscount = amount - finalDiscount
+    for(let i=1;i<=5;i++){
+        result += i * finalDiscount + " "
+    }
+    document.getElementById("result").innerHTML = "Discounted amounts for base "+amount+" are "+result
+}
+</script>
+
+</body>
+</html> 
