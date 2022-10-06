@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vacation Page</title>
+     </head>
+ 
+<body>
+<h2>Vasavi Devineni selects a vacation</h2>
+<form>
+    <input type="checkbox" id="air" name="air" value="True" checked>
+    <label for="air">Travel by Air</label></br>
+  
+    <input type="checkbox" id="domestic" name="domestic" value="True" checked>
+    <label for="domestic">Domestic</label></br>
+  
+    <input type="checkbox" id="resort" name="resort" value="False">
+    <label for="resort">Resort</label></br>
+
+    <input type="button" onclick="selectVacation()" value="Select a vacation">
+  </form>
+  
+<p id="result">Select an option for travel </p>
+
+<script> 
+let my_vacation = {}
+function selectVacation(){
+    my_vacation = {}
+    let air = document.getElementById("air").value
+    let domestic = document.getElementById("domestic").value
+    let resort = document.getElementById("resort").value
+    if(document.getElementById("air").checked){
+        my_vacation.air = true
+    }else{
+        my_vacation.air = false
+    }
+
+    if(document.getElementById("domestic").checked){
+        my_vacation.domestic = true
+    }else{
+        my_vacation.domestic = false
+    }
+
+    if(document.getElementById("resort").checked){
+        my_vacation.resort = true
+    }else{
+        my_vacation.resort = false
+    }
+
+    document.getElementById("result").innerHTML = "<b>Air:</b>"+my_vacation.air+", <b>Domestic:</b>"+my_vacation.domestic+", <b>Resort:</b>"+my_vacation.resort
+}
+</script>
+
+</body>
+</html> 
